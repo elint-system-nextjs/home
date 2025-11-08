@@ -1,1 +1,20 @@
 @import 'tailwindcss';
+
+@theme {
+  /* === Base Tech Palette === */
+  --color-tech-blue: #2563EB;      /* Primary - Trust & Technology */
+  --color-cyan: #06B6D4;           /* Secondary - IoT connectivity feel */
+  --color-electric-lime: #C7EA46;  /* Accent - Energy and modern touch */
+  --color-orange-pulse: #FB923C;   /* CTA buttons - eye-catching warmth */
+
+  /* === Backgrounds & Neutrals === */
+  --color-snow-white: #F9FAFB;     /* Clean background */
+  --color-graphite-dark: #111827;  /* Deep background or footer */
+  --color-slate-gray: #6B7280;     /* Text or subtext */
+  --color-light-silver: #E5E7EB;   /* Border / divider / card edges */
+
+  /* === Gradient Suggestions === */
+  --gradient-hero: linear-gradient(135deg, #2563EB, #06B6D4);
+  --gradient-accent: linear-gradient(90deg, #C7EA46, #FB923C);
+}
+
