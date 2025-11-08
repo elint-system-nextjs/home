@@ -56,8 +56,12 @@ import logo13 from "./iotsolutions/android.png";
 import logo14 from "./iotsolutions/ios.png";
 import solution from "./iotsolutions/software-solutions.png";
 import home from "./iotsolutions/home-solution.png";
+import hotbg1 from "./whatshot/hot1.jpg"
+import hotbg2 from "./whatshot/hot2.jpg"
+import hotbg3 from "./whatshot/hot3.jpg"
 
 export {logo, isro, ge, lt, hcl, gail, igcar, indus, safaricom, etisalat, roshan, airtel, at, mtn, bsnl, ssn, saudi, peax, riyadh, smarttank, renewable, atm, utilities, industries, telecom, mobility, datacenter, oil, water, metrology, cloudchain, agriculture,
     ultralevelpro, dlock, ultrasensepro, remon, ultralevelmax, wireless, hydrostatic, ultraleveldisplay, voygarlora, voygar4g,
-    logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, solution, home
+    logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, solution, home,
+    hotbg1, hotbg2, hotbg3
 }
