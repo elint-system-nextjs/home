@@ -88,7 +88,7 @@ const Home = () => {
       <div className="overflow-x-hidden">
         <Nav />
         <div className="bg-snow-white">
-          <section className="bg-tech-blue relative flex flex-col lg:flex-row justify-between items-center px-6 pt-24 md:px-12 lg:px-20 pb-16 lg:py-38 lg:mt-18">
+          <section id="banner section" className="bg-tech-blue relative flex flex-col lg:flex-row justify-between items-center px-6 pt-24 md:px-12 lg:px-20 pb-16 lg:py-38 lg:mt-18">
             <div
               className="flex flex-col gap-6 max-w-xl text-center items-start sm:items-center sm:justify-center lg:text-left lg:items-start xl:items-start"
               data-aos="fade-right"
@@ -113,7 +113,7 @@ const Home = () => {
               </Link>
             </div>
           </section>
-          <section>
+          <section id="IOT Solutions">
         <div className="py-10 px-[10%]">
           <div className="max-w-full bg-white">
             <div className="p-5 border-gray-100 rounded-lg shadow-lg">
