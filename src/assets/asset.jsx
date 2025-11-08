@@ -40,6 +40,24 @@ import hydrostatic from "./products/hydro.png"
 import ultraleveldisplay from "./products/ultralevel-display.png"
 import voygarlora from "./products/voyager.png"
 import voygar4g from "./products/Voyager 4G.jpg"
+import logo1 from "./iotsolutions/4g.png";
+import logo2 from "./iotsolutions/5g.png";
+import logo3 from "./iotsolutions/lorawan.png";
+import logo4 from "./iotsolutions/satelite.png";
+import logo5 from "./iotsolutions/lte.png";
+import logo6 from "./iotsolutions/nb-iot.png";
+import logo7 from "./iotsolutions/bluetooth.png";
+import logo8 from "./iotsolutions/radar.png";
+import logo9 from "./iotsolutions/angular.png";
+import logo10 from "./iotsolutions/springboot.png";
+import logo11 from "./iotsolutions/postgresql.png";
+import logo12 from "./iotsolutions/timescaledb.png";
+import logo13 from "./iotsolutions/android.png";
+import logo14 from "./iotsolutions/ios.png";
+import solution from "./iotsolutions/software-solutions.png";
+import home from "./iotsolutions/home-solution.png";
 
 export {logo, isro, ge, lt, hcl, gail, igcar, indus, safaricom, etisalat, roshan, airtel, at, mtn, bsnl, ssn, saudi, peax, riyadh, smarttank, renewable, atm, utilities, industries, telecom, mobility, datacenter, oil, water, metrology, cloudchain, agriculture,
-    ultralevelpro, dlock, ultrasensepro, remon, ultralevelmax, wireless, hydrostatic, ultraleveldisplay, voygarlora, voygar4g}
+    ultralevelpro, dlock, ultrasensepro, remon, ultralevelmax, wireless, hydrostatic, ultraleveldisplay, voygarlora, voygar4g,
+    logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, solution, home
+}
