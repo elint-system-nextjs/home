@@ -86,6 +86,7 @@ import logo1msme from "./events/imgi_106_msme.png"
 import logo2rei from "./events/imgi_107_renewable.png"
 import logo3solar from "./events/imgi_108_solar.png"
 import consultation from "./consultation/consultation.jpg"
+import aiglobe from "./ai-globe.png"
 
 export {logo, isro, ge, lt, hcl, gail, igcar, indus, safaricom, etisalat, roshan, airtel, at, mtn, bsnl, ssn, saudi, peax, riyadh, smarttank, renewable, atm, utilities, industries, telecom, mobility, datacenter, oil, water, metrology, cloudchain, agriculture,
     ultralevelpro, dlock, ultrasensepro, remon, ultralevelmax, wireless, hydrostatic, ultraleveldisplay, voygarlora, voygar4g,
@@ -95,5 +96,6 @@ export {logo, isro, ge, lt, hcl, gail, igcar, indus, safaricom, etisalat, roshan
     administrativetools, hardware, support, mobileWeb, iot,
     map,
     img1msme, img2msme, img3msme, img4msme, img5msme, img6msme, img1rei, img2rei, img3rei, img4rei, img1solar, img2solar, logo1msme, logo2rei, logo3solar,
-    consultation
+    consultation,
+    aiglobe
 }
