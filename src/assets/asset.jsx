@@ -59,9 +59,21 @@ import home from "./iotsolutions/home-solution.png";
 import hotbg1 from "./whatshot/hot1.jpg"
 import hotbg2 from "./whatshot/hot2.jpg"
 import hotbg3 from "./whatshot/hot3.jpg"
+import happy from "./whychooseus/happy-customer.svg"
+import experience from "./whychooseus/experience.svg"
+import countries from "./whychooseus/countries.svg"
+import industry from "./whychooseus/industry-verticals.svg"
+import live from "./whychooseus/live-devices.svg"
+import administrativetools from "./whatwedo/data-analysis-security.jpg"
+import hardware from "./whatwedo/motherboard-background.jpg"
+import support from "./whatwedo/developer-doing-server-system-upkeep.jpg"
+import mobileWeb from "./whatwedo/remote-work.jpg"
+import iot from "./whatwedo/standard-quality-control-concept-m.jpg"
 
 export {logo, isro, ge, lt, hcl, gail, igcar, indus, safaricom, etisalat, roshan, airtel, at, mtn, bsnl, ssn, saudi, peax, riyadh, smarttank, renewable, atm, utilities, industries, telecom, mobility, datacenter, oil, water, metrology, cloudchain, agriculture,
     ultralevelpro, dlock, ultrasensepro, remon, ultralevelmax, wireless, hydrostatic, ultraleveldisplay, voygarlora, voygar4g,
     logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, solution, home,
-    hotbg1, hotbg2, hotbg3
+    hotbg1, hotbg2, hotbg3,
+    happy, experience, countries, industry, live,
+    administrativetools, hardware, support, mobileWeb, iot
 }

@@ -44,11 +44,22 @@ import {
   hotbg2,
   hotbg3,
   ultraleveldisplay,
+  happy,
+  experience,
+  countries,
+  industry,
+  live,
+  hardware,
+  administrativetools,
+  support,
+  mobileWeb,
+  iot,
 } from "../assets/asset";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
-import { Autoplay } from "swiper/modules";
+import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
+import { motion } from "framer-motion";
 
 const Home = () => {
   useEffect(() => {
@@ -122,6 +133,61 @@ const Home = () => {
         "ISO RS485 | RTC | Navigation Key",
       ],
       backgroundImage: hotbg3,
+    },
+  ];
+
+  const data = [
+    { img: happy, value: "150+", text: "Happy Customers" },
+    { img: experience, value: "18+", text: "Years of Experience" },
+    { img: countries, value: "20+", text: "Countries Served" },
+    { img: live, value: "55K+", text: "Live Devices" },
+    { img: industry, value: "13+", text: "Industry Verticals" },
+  ];
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.15, type: "spring", stiffness: 60 },
+    }),
+    hover: {
+      scale: 1.05,
+      boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+      transition: { type: "spring", stiffness: 200 },
+    },
+  };
+
+  const whatwedo = [
+    {
+      img: hardware,
+      title: "Tailored Embedded Hardware & Software",
+      description:
+        "Custom-built solutions designed to meet unique industry requirements.",
+    },
+    {
+      img: administrativetools,
+      title: "Advanced Data Analytics",
+      description:
+        "Leveraging AI and ML to turn complex data into actionable insights.",
+    },
+    {
+      img: support,
+      title: "Comprehensive Support & Maintenance",
+      description:
+        "Ensuring long-term performance and optimization with continuous support.",
+    },
+    {
+      img: mobileWeb,
+      title: "Mobile & Web Dashboards",
+      description:
+        "Seamless, real-time monitoring, control, and data visualization on any device.",
+    },
+    {
+      img: iot,
+      title: "White-Label IoT Platforms",
+      description:
+        "Fully customizable, scalable platforms that adapt to your brand and operational needs.",
     },
   ];
 
@@ -304,6 +370,292 @@ const Home = () => {
                       </div>
                     </div>
                   ))}
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            id="Why Choose Us"
+            className="w-full bg-snow-white py-20 px-4 md:px-12 overflow-hidden"
+          >
+            {/* Header */}
+            <motion.div
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center max-w-5xl mx-auto"
+            >
+              <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+                Why Choose <span className="text-red-500">Us?</span>
+              </h1>
+              <p className="text-slate-gray text-base md:text-lg leading-relaxed">
+                With over 18 years of experience in IoT and Cloud Solutions,
+                Elint Systems provides quick, cost-effective, and reliable
+                solutions for your most challenging IoT needs.
+              </p>
+            </motion.div>
+
+            {/* Stats Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-20 max-w-6xl mx-auto">
+              {data.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="relative flex flex-col items-center text-center"
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  whileHover="hover"
+                  viewport={{ once: true }}
+                  custom={index}
+                >
+                  {/* Floating Icon */}
+                  <motion.div
+                    className="absolute -top-12 bg-white rounded-2xl p-4 shadow-md border-snow-white"
+                    whileHover={{
+                      rotate: [0, -6, 6, 0],
+                      transition: { duration: 0.6 },
+                    }}
+                  >
+                    <img
+                      src={item.img}
+                      alt={item.text}
+                      className="w-14 h-14 object-contain"
+                    />
+                  </motion.div>
+
+                  {/* Card Box (Fixed Height) */}
+                  <div className="border-snow-white bg-white rounded-2xl flex flex-col justify-center items-center px-6 py-14 shadow-sm hover:shadow-lg transition duration-300 w-full h-[280px]">
+                    <motion.p
+                      className="font-extrabold text-5xl text-gray-900 mb-3"
+                      whileHover={{ scale: 1.1, color: "#ef4444" }}
+                    >
+                      {item.value}
+                    </motion.p>
+                    <p className="text-slate-gray font-medium text-lg">
+                      {item.text}
+                    </p>
+                    <div className="h-1 w-10 bg-linear-to-r from-red-500 to-orange-400 mt-3 rounded-full"></div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+          <section
+            id="Trusted By"
+            className="bg-gradient-to-br from-cyan to-tech-blue px-6 pt-20 md:px-12 lg:px-20 pb-16 text-center overflow-hidden"
+          >
+            <h1
+              className="text-3xl md:text-4xl font-bold text-snow-white mb-10"
+              data-aos="fade-up"
+            >
+              Trusted By
+            </h1>
+
+            <p
+              className="text-snow-white text-lg mb-12 max-w-2xl mx-auto"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              We’re proud to collaborate with global brands, startups, and
+              forward-thinking companies that trust our IoT, AI, and ML
+              expertise to drive innovation and efficiency.
+            </p>
+
+            {/* Common settings */}
+            {(() => {
+              const swiperSettings = {
+                modules: [Autoplay],
+                spaceBetween: 30,
+                slidesPerView: 6,
+                loop: true,
+                speed: 4000, // smooth scroll speed
+                freeMode: true,
+                freeModeMomentum: false,
+                autoplay: {
+                  delay: 0, // continuous motion
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: false,
+                },
+                allowTouchMove: false,
+                grabCursor: false,
+                breakpoints: {
+                  320: { slidesPerView: 2, spaceBetween: 10 },
+                  640: { slidesPerView: 3, spaceBetween: 20 },
+                  1024: { slidesPerView: 6, spaceBetween: 30 },
+                },
+              };
+
+              return (
+                <>
+                  {/* Row 1 - Right to Left */}
+                  <Swiper {...swiperSettings} className="py-6">
+                    {[...row1, ...row1].map((logo, i) => (
+                      <SwiperSlide
+                        key={`r1-${i}`}
+                        className="flex items-center justify-center"
+                      >
+                        <img
+                          src={logo}
+                          alt={`Partner ${i}`}
+                          className="w-32 md:w-40 transition duration-300 hover:scale-105"
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+
+                  {/* Row 2 - Left to Right */}
+                  <Swiper
+                    {...{
+                      ...swiperSettings,
+                      autoplay: {
+                        ...swiperSettings.autoplay,
+                        reverseDirection: true,
+                      },
+                    }}
+                    className="py-6"
+                  >
+                    {[...row2, ...row2].map((logo, i) => (
+                      <SwiperSlide
+                        key={`r2-${i}`}
+                        className="flex items-center justify-center"
+                      >
+                        <img
+                          src={logo}
+                          alt={`Partner ${i}`}
+                          className="w-32 md:w-40 transition duration-300 hover:scale-105"
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+
+                  {/* Row 3 - Right to Left */}
+                  <Swiper {...swiperSettings} className="py-6">
+                    {[...row3, ...row3].map((logo, i) => (
+                      <SwiperSlide
+                        key={`r3-${i}`}
+                        className="flex items-center justify-center"
+                      >
+                        <img
+                          src={logo}
+                          alt={`Partner ${i}`}
+                          className="w-32 md:w-40 transition duration-300 hover:scale-105"
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </>
+              );
+            })()}
+          </section>
+          <section id="Our Core Values"></section>
+          <section className="w-full bg-linear-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] py-20 px-6 md:px-12">
+            {/* Header */}
+            <div className="text-center mb-14">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+                What We Do
+              </h2>
+              <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+                At Elint Systems, we ensure that all your Concept to Solutions
+                needs are met under a single roof. Our Expertise on IoT ( IT &
+                OT)
+              </p>
+            </div>
+
+            {/* Swiper Section */}
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={30}
+              centeredSlides={true}
+              effect="coverflow"
+              loop={true}
+              speed={1200} // 🔹 Smooth transition speed
+              autoplay={{
+                delay: 3500, // smooth timing between slides
+                disableOnInteraction: false,
+              }}
+              pagination={{ clickable: true }}
+              breakpoints={{
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+              modules={[Pagination, Autoplay, EffectCoverflow]}
+              className="max-w-7xl mx-auto"
+            >
+              {whatwedo.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <motion.div
+                    className="bg-[#16213e]/80 backdrop-blur-md border border-gray-700 rounded-3xl shadow-xl p-8 flex flex-col justify-center items-center text-center hover:scale-[1.05] transition-all duration-500 min-h-[360px]"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    {/* Icon or Image */}
+                    <motion.div
+                      className="flex items-center justify-center mb-6"
+                      whileHover={{
+                        scale: 1.15,
+                        rotate: [0, -5, 5, 0],
+                        transition: { duration: 0.6 },
+                      }}
+                    >
+                      {item.img ? (
+                        <img
+                          src={item.img}
+                          alt={item.title}
+                          className="object-contain rounded-2xl"
+                        />
+                      ) : (
+                        <span className="text-gray-400 font-semibold">IoT</span>
+                      )}
+                    </motion.div>
+
+                    {/* Text */}
+                    <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-300 text-base max-w-md">
+                      {item.description}
+                    </p>
+                  </motion.div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </section>
+          <section id="Our Expertise On Solutions Offerings">
+            <div className="py-10 px-[10%] ">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="400"
+                className="text-center text-white rounded-3xl shadow-lg p-5 bg-gradient-to-r from-[#0a0c25] via-[#0f1b5a] to-[#181b81]"
+              >
+                <h1
+                  className="text-2xl md:text-3xl font-bold"
+                  data-aos="zoom-in"
+                >
+                  Our Expertise On Solutions Offerings
+                </h1>
+                <p
+                  className="py-2 text-justify mx-auto w-full md:w-[70%] lg:w-[60%]"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  Elint Systems is a top-tier provider of IoT, ML, and AI
+                  solutions designed to monitor, process, and control assets
+                  across various industries. Our team excels in delivering
+                  customized solutions for
+                </p>
+                <div className="py-2 flex justify-center">
+                  <img
+                    src={home}
+                    alt="Home-Solution"
+                    width={700}
+                    height={700}
+                    data-aos="zoom-in-up"
+                    data-aos-delay="100"
+                    className="hover:scale-95 transition-transform duration-1000 w-full max-w-[700px]"
+                  />
                 </div>
               </div>
             </div>
