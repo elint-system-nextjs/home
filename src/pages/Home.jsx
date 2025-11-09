@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "../Nav";
 import { Link } from "react-router";
 import AOS from "aos";
@@ -55,12 +55,30 @@ import {
   mobileWeb,
   iot,
   map,
+  img1msme,
+  img2msme,
+  img3msme,
+  img4msme,
+  img5msme,
+  img6msme,
+  logo1msme,
+  img1rei,
+  img3rei,
+  img2rei,
+  img4rei,
+  logo2rei,
+  img1solar,
+  img2solar,
+  logo3solar,
+  consultation,
 } from "../assets/asset";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { Calendar } from "lucide-react";
+import Footer from "../Footer";
 
 const Home = () => {
   useEffect(() => {
@@ -191,6 +209,74 @@ const Home = () => {
         "Fully customizable, scalable platforms that adapt to your brand and operational needs.",
     },
   ];
+
+  const events = [
+    {
+      title: "INTERNATIONAL MSME B2B MEET 27-28 JUNE 2023 | MALAYSIA",
+      description:
+        "Global MSME collaboration fostering trade, partnerships, and growth opportunities in Malaysia.",
+      images: [img1msme, img2msme, img3msme, img4msme, img5msme, img6msme],
+      logo: logo1msme,
+    },
+    {
+      title: "REI 2018, ASIA'S LARGEST EVENT IN REI DOMAIN",
+      description:
+        "Asia’s largest Renewable Energy India Expo showcasing sustainable and innovative clean energy solutions.",
+      images: [img1rei, img2rei, img3rei, img4rei],
+      logo: logo2rei,
+    },
+    {
+      title: "SOLAR MEET - JAN 2018 @ DELHI",
+      description:
+        "A leading solar industry conference discussing innovation, efficiency, and green energy transformation.",
+      images: [img1solar, img2solar],
+      logo: logo3solar,
+    },
+  ];
+
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const controls = useAnimation();
+
+  // Auto-slide events every 10s
+  useEffect(() => {
+    if (paused) return;
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % events.length);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, [paused, events.length]);
+
+  // Continuous auto-slide with Z-axis parallax (desktop only)
+  useEffect(() => {
+    controls.start({
+      x: ["0%", "-100%"],
+      rotateY: [0, 10, -10, 0],
+      z: [0, 40, 20, 0],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 20,
+          ease: "linear",
+        },
+        rotateY: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 6,
+          ease: "easeInOut",
+        },
+        z: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 6,
+          ease: "easeInOut",
+        },
+      },
+    });
+  }, [index, controls]);
+
+  const current = events[index];
 
   const countryNames = [
     "AFGHANISTAN",
@@ -572,7 +658,7 @@ const Home = () => {
               );
             })()}
           </section>
-          <section id="Our Core Values"></section>
+          <section id="What We Do"></section>
           <section className="w-full bg-linear-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] py-20 px-6 md:px-12">
             {/* Header */}
             <div className="text-center mb-14">
@@ -714,7 +800,190 @@ const Home = () => {
               </div>
             </div>
           </section>
+          <section id="Events" className="relative py-16 sm:py-24 flex flex-col items-center justify-center bg-linear-to-r from-[#0a0a0f] via-[#1a0b24] to-[#0f0515] text-white overflow-hidden">
+            {/* Header */}
+            <motion.div
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="text-center mb-12 sm:mb-16 px-4"
+            >
+              <h2 className="text-3xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-linear-to-r from-pink-400 to-purple-300 drop-shadow-lg tracking-wide">
+                Events & Highlights
+              </h2>
+              <p className="text-gray-300 mt-3 sm:mt-4 text-sm sm:text-lg">
+                Showcasing our global impact and participation
+              </p>
+            </motion.div>
+
+            {/* Event Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="relative w-[95%] max-w-[1100px] bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-[0_0_50px_rgba(255,100,200,0.15)] overflow-hidden flex flex-col md:flex-row-reverse transition-all duration-700 hover:scale-[1.01]"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+            >
+              {/* Right: Logos Auto-Slide */}
+              <div className="w-full md:w-1/2 p-4 md:p-6 flex justify-center md:justify-start overflow-x-auto md:overflow-hidden perspective-distant">
+                <motion.div
+                  animate={controls}
+                  className="flex gap-4 md:gap-6 whitespace-nowrap"
+                >
+                  {[...current.images, ...current.images].map((img, i) => (
+                    <motion.div
+                      key={i}
+                      className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden bg-linear-to-r from-gray-800/50 to-black/40 border border-white/10 shadow-lg shrink-0"
+                      whileHover={{ scale: 1.05, rotateY: 20, z: 30 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <img
+                        src={img}
+                        alt="event"
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+
+              {/* Left: Event Info */}
+              <div className="w-full md:w-1/2 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-10 py-4 sm:py-6 md:py-8">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 40 }}
+                    transition={{ duration: 0.8 }}
+                    className="flex flex-col items-center"
+                  >
+                    <img
+                      src={current.logo}
+                      alt="logo"
+                      className="mb-4 sm:mb-6 w-24 sm:w-28 h-auto drop-shadow-[0_0_15px_rgba(255,180,255,0.5)]"
+                    />
+                    <h3 className="text-lg sm:text-2xl md:text-3xl font-semibold mb-3 sm:mb-4 bg-clip-text text-transparent bg-linear-to-r from-pink-400 to-purple-300">
+                      {current.title}
+                    </h3>
+                    <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-xs sm:max-w-md line-clamp-4">
+                      {current.description}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </motion.div>
+
+            {/* Dot Indicators */}
+            <div className="flex justify-center mt-6 sm:mt-8 space-x-2 sm:space-x-3">
+              {events.map((_, i) => (
+                <motion.div
+                  key={i}
+                  animate={{
+                    scale: i === index ? 1.3 : 1,
+                    opacity: i === index ? 1 : 0.5,
+                  }}
+                  transition={{ duration: 0.4 }}
+                  className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full ${
+                    i === index
+                      ? "bg-linear-to-r from-pink-400 to-purple-400 shadow-[0_0_8px_rgba(255,150,255,0.7)]"
+                      : "bg-gray-600"
+                  }`}
+                ></motion.div>
+              ))}
+            </div>
+
+            {/* Ambient Glows */}
+            <div className="absolute top-0 left-1/4 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-pink-500/20 blur-[120px] sm:blur-[180px] rounded-full"></div>
+            <div className="absolute bottom-0 right-1/4 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-purple-600/20 blur-[120px] sm:blur-[180px] rounded-full"></div>
+          </section>
+          <section
+            id="Consultation"
+            className="w-full py-16 px-6 sm:px-10 lg:px-20 flex flex-col lg:flex-row items-center justify-between relative"
+          >
+            {/* Background Gradient Layers */}
+            <div className="absolute inset-0  bg-linear-to-r from-[#0a0a0f] via-[#1a0b24] to-[#0f0515] -z-10 overflow-hidden">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+                className="absolute top-[-200px] left-[-200px] w-[600px] h-[600px] bg-pink-500/10 rounded-full filter blur-3xl"
+              />
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ repeat: Infinity, duration: 80, ease: "linear" }}
+                className="absolute bottom-[-150px] right-[-150px] w-[500px] h-[500px] bg-purple-500/10 rounded-full filter blur-3xl"
+              />
+            </div>
+
+            {/* Left Section */}
+            <div className="lg:w-1/2 text-center lg:text-left space-y-6 relative z-10">
+              <h2 className="text-3xl sm:text-4xl font-extrabold bg-clip-text text-transparent bg-linear-to-r from-pink-400 to-purple-300 drop-shadow-lg">
+                Speak with an IoT Expert Today!
+              </h2>
+              <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                Our specialists are ready to discuss your specific needs and
+                demonstrate how our IoT Solutions can revolutionize your
+                operations, improving business performance and operational
+                efficiency.
+              </p>
+
+              {/* Pop Button */}
+              <motion.a
+                whileHover={{
+                  scale: 1.1,
+                  y: -3,
+                  boxShadow:
+                    "0 0 30px rgba(255,192,203,0.7), 0 0 60px rgba(255,105,180,0.4)",
+                }}
+                whileTap={{ scale: 0.97 }}
+                href="#"
+                className="inline-flex items-center gap-3 text-white text-lg sm:text-xl font-bold px-8 sm:px-12 py-3 sm:py-4 rounded-2xl border-2 border-pink-400 shadow-[0_0_15px_rgba(255,192,203,0.3)] hover:shadow-[0_0_30px_rgba(255,192,203,0.5)] transition-all duration-300  bg-linear-to-r from-pink-400/30 to-purple-500/20 backdrop-blur-sm"
+              >
+                Schedule a free consultation <Calendar size={22} />
+              </motion.a>
+            </div>
+
+            {/* Right Section - Image Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 120, damping: 20 }}
+              className="mt-12 lg:mt-0 lg:w-1/2 flex justify-center relative z-10"
+            >
+              <div
+                className="group relative w-full max-w-md rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:-translate-y-2"
+                style={{ perspective: "1000px" }}
+              >
+                <motion.div
+                  whileHover={{ rotateY: 8, rotateX: -5 }}
+                  transition={{ type: "spring", stiffness: 120, damping: 10 }}
+                  className="relative"
+                >
+                  {/* Layered Glow */}
+                  <div className="absolute -inset-1  bg-linear-to-r from-pink-400 to-purple-300 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-all duration-500"></div>
+
+                  <img
+                    src={consultation}
+                    alt="IoT Expert"
+                    className="relative w-full h-auto object-cover rounded-3xl"
+                  />
+
+                  {/* Overlay info card */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileHover={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md rounded-xl p-3 sm:p-4 text-white text-center w-11/12"
+                  >
+                    Connect with our experts & elevate your IoT solutions!
+                  </motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </section>
         </div>
+        <Footer />
       </div>
     </>
   );

@@ -70,6 +70,22 @@ import support from "./whatwedo/developer-doing-server-system-upkeep.jpg"
 import mobileWeb from "./whatwedo/remote-work.jpg"
 import iot from "./whatwedo/standard-quality-control-concept-m.jpg"
 import map from "./oursolutionsdeployed/map.jpg"
+import img1msme from "./events/imgi_113_msme1.png"
+import img2msme from "./events/imgi_114_msme2.png"
+import img3msme from "./events/imgi_115_msme3.png"
+import img4msme from "./events/imgi_116_msme4.png"
+import img5msme from "./events/imgi_117_msme5.png"
+import img6msme from "./events/imgi_118_msme6.png"
+import img1rei from "./events/imgi_109_renewable4.png"
+import img2rei from "./events/imgi_110_renewable5.png"
+import img3rei from "./events/imgi_119_renewable1.png"
+import img4rei from "./events/imgi_120_renewable3.png"
+import img1solar from "./events/imgi_111_solar1.png"
+import img2solar from "./events/imgi_112_solar2.png"
+import logo1msme from "./events/imgi_106_msme.png"
+import logo2rei from "./events/imgi_107_renewable.png"
+import logo3solar from "./events/imgi_108_solar.png"
+import consultation from "./consultation/consultation.jpg"
 
 export {logo, isro, ge, lt, hcl, gail, igcar, indus, safaricom, etisalat, roshan, airtel, at, mtn, bsnl, ssn, saudi, peax, riyadh, smarttank, renewable, atm, utilities, industries, telecom, mobility, datacenter, oil, water, metrology, cloudchain, agriculture,
     ultralevelpro, dlock, ultrasensepro, remon, ultralevelmax, wireless, hydrostatic, ultraleveldisplay, voygarlora, voygar4g,
@@ -77,5 +93,7 @@ export {logo, isro, ge, lt, hcl, gail, igcar, indus, safaricom, etisalat, roshan
     hotbg1, hotbg2, hotbg3,
     happy, experience, countries, industry, live,
     administrativetools, hardware, support, mobileWeb, iot,
-    map
+    map,
+    img1msme, img2msme, img3msme, img4msme, img5msme, img6msme, img1rei, img2rei, img3rei, img4rei, img1solar, img2solar, logo1msme, logo2rei, logo3solar,
+    consultation
 }
