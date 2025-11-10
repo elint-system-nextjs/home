@@ -43,3 +43,11 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+/* .clip-arrow {
+  width: 220px;
+  height: 140px;
+  background: linear-gradient(135deg, #1FB6FF, #005f9e);
+  /* correct polygon syntax: pairs separated by commas 
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); /* Safari 
+} */
