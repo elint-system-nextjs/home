@@ -304,7 +304,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="overflow-x-hidden">
+      <div className="overflow-x-hidden overflow-y-hidden no-scrollbar">
         <Nav />
         <div className="bg-snow-white">
           <section id="banner" className="relative flex flex-col lg:flex-row justify-between items-center overflow-hidden bg-gradient-to-br from-[#111827] via-[#1e3a8a] to-[#111827] px-6 pt-28 md:px-12 lg:px-24 pb-20">
@@ -500,10 +500,7 @@ const Home = () => {
               </div>
             </div>
           </section>
-          <section
-            id="Why Choose Us"
-            className="w-full bg-snow-white py-20 px-4 md:px-12 overflow-hidden"
-          >
+          <section id="Why Choose Us" className="w-full bg-snow-white py-20 px-4 md:px-12 overflow-hidden">
             {/* Header */}
             <motion.div
               initial={{ opacity: 0, y: -30 }}
@@ -567,10 +564,7 @@ const Home = () => {
               ))}
             </div>
           </section>
-          <section
-            id="Trusted By"
-            className="bg-gradient-to-br from-cyan to-tech-blue px-6 pt-20 md:px-12 lg:px-20 pb-16 text-center overflow-hidden"
-          >
+          <section id="Trusted By" className="bg-gradient-to-br from-cyan to-tech-blue px-6 pt-20 md:px-12 lg:px-20 pb-16 text-center overflow-hidden">
             <h1
               className="text-3xl md:text-4xl font-bold text-snow-white mb-10"
               data-aos="fade-up"

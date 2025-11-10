@@ -321,22 +321,22 @@ const Footer = () => {
                 <FaFacebookF
                   data-aos="zoom-in"
                   data-aos-delay="200"
-                  className="p-2 rounded-full bg-orange-pulse text-white text-3xl hover:text-orange-pulse hover:scale-110 hover:bg-white transition-transform duration-300 cursor-pointer"
+                  className="p-2 rounded-full bg-orange-pulse text-snow-white text-3xl hover:text-orange-pulse hover:scale-110 hover:bg-white transition-transform duration-300 cursor-pointer"
                 />
                 <FaTwitter
                   data-aos="zoom-in"
                   data-aos-delay="200"
-                  className="p-2 rounded-full bg-orange-pulse text-white text-3xl hover:text-orange-pulse hover:scale-110 hover:bg-white transition-transform duration-300 cursor-pointer"
+                  className="p-2 rounded-full bg-orange-pulse text-snow-white text-3xl hover:text-orange-pulse hover:scale-110 hover:bg-white transition-transform duration-300 cursor-pointer"
                 />
                 <FaInstagram
                   data-aos="zoom-in"
                   data-aos-delay="200"
-                  className="p-2 rounded-full bg-orange-pulse text-white text-3xl hover:text-orange-pulse hover:scale-110 hover:bg-white transition-transform duration-300 cursor-pointer"
+                  className="p-2 rounded-full bg-orange-pulse text-snow-white text-3xl hover:text-orange-pulse hover:scale-110 hover:bg-white transition-transform duration-300 cursor-pointer"
                 />
                 <FaYoutube
                   data-aos="zoom-in"
                   data-aos-delay="200"
-                  className="p-2 rounded-full bg-orange-pulse text-white text-3xl hover:text-orange-pulse hover:scale-110 hover:bg-white transition-transform duration-300 cursor-pointer"
+                  className="p-2 rounded-full bg-orange-pulse text-snow-white text-3xl hover:text-orange-pulse hover:scale-110 hover:bg-white transition-transform duration-300 cursor-pointer"
                 />
               </div>
 
